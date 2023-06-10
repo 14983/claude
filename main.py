@@ -2,19 +2,6 @@ from typing import Union
 import asyncio
 from slack import client
 import sys
-import os
-
-def executestring(string) :
-    commands = []
-    start_index, end_index = 0, 0
-    while start_index < len(string):
-        start_index = string.find('<COMMAND>', end_index)
-        if start_index == -1:
-            break
-        end_index = string.find('</COMMAND>', start_index)
-        commands.append(string[start_index+9:end_index])
-    for i in commands :
-        os.system(i)
 
 class ClaudeChatPrompt:
     def __init__(self, prompt):
