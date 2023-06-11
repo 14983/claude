@@ -40,7 +40,6 @@ while True :
             break
     if prompt == 'exit\n' :
         exit(0)
-    print('Waiting for Claude...',end='\r')
-    print('\033[31;1m->\033[0m',end='')
+    print('\r\033[31;1m->\033[0m',end='')
     result = asyncio.run(mainfunc(prompt))
     print('')
